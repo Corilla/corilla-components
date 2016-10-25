@@ -8,4 +8,4 @@ At the moment this isn't usable but the ultimate goal is to make it easy for oth
 
 ## Components
 
-- [MarkdownPreview](src/MarkdownPreview/README.md)
+- [MarkdownPreview](src/MarkdownPreview/)
