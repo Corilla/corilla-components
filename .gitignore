@@ -1,0 +1,10 @@
+*.DS_Store
+Thumbs.db
+.idea*
+*.iml
+.ipr
+.iws
+lib
+node_modules
+npm-debug.log
+*.log

@@ -1,0 +1,20 @@
+body {
+  font-size: 18px;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.7em; }
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.1em; }
+h5 { font-size: .8em; }
+
+section {
+  $baseColor: #e4d234;
+
+  padding: 25px;
+  box-shadow: 0 0 6px rgba(0,0,0,.6);
+  border-radius: 6px;
+  margin-bottom: 25px;
+  background-color: lighten($baseColor, 5%);
+  border: 1px solid darken($baseColor, 10%);
+}
