@@ -7,10 +7,11 @@ The following extensions are also used:
 - [markdown-it-imsize](https://github.com/tatsy/markdown-it-imsize) to allow specific sizing for images
 
 
-### Usage:
-```javascript
+## Usage:
+
+```js
 <MarkdownPreview text={'# Hello World'} />
 ```
 
-### TODO:
+## TODO:
 - Look at making options and plugins configurable. Not sure if this is really feasible.
