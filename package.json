@@ -15,6 +15,11 @@
     "release-patch": "npm run build && npm version patch",
     "release-minor": "npm run build && npm version minor",
     "release-major": "npm run build && npm version major",
+    "test": "ava",
+    "watch-test": "npm test -- --watch",
+    "cover-test": "nyc npm test",
+    "watch-cover": "nodemon --quiet --watch src --exec npm run cover-test -s",
+    "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
     "start": "node server.js"
   },
   "repository": {
@@ -35,7 +40,29 @@
   "bugs": {
     "url": "https://github.com/corilla/corilla-components/issues"
   },
+  "ava": {
+    "babel": "inherit",
+    "files": [
+      "src/components/**/*.spec.js"
+    ],
+    "source": [
+      "src/components/**/*.{js,jsx}",
+      "!lib/**/*"
+    ],
+    "verbose": true,
+    "require": [
+      "./test-env.setup.js"
+    ]
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text",
+      "html"
+    ]
+  },
   "devDependencies": {
+    "ava": "^0.17.0",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.18.2",
     "babel-eslint": "^7.1.1",
@@ -45,21 +72,29 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
+    "browser-env": "^2.0.16",
     "cpy-cli": "^1.0.1",
     "css-loader": "^0.26.1",
+    "enzyme": "^2.6.0",
     "eslint": "^3.11.1",
     "eslint-plugin-react": "^6.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "fs-extra": "^1.0.0",
     "html-webpack-plugin": "^2.24.1",
+    "ignore-styles": "^5.0.1",
     "img-loader": "^1.3.1",
+    "jsdom": "^9.8.3",
     "json-loader": "^0.5.4",
     "node-sass": "^3.13.0",
+    "nodemon": "^1.11.0",
+    "nyc": "^10.0.0",
     "postcss-loader": "^1.2.0",
+    "react-addons-test-utils": "^15.4.1",
     "release-it": "^2.5.1",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.0.2",
+    "sinon": "^1.17.6",
     "style-loader": "^0.13.1",
     "through2": "^2.0.3",
     "underscore.string": "^3.3.4",
@@ -70,6 +105,8 @@
   },
   "dependencies": {
     "autoprefixer": "^6.5.3",
+    "babel-polyfill": "^6.20.0",
+    "babel-register": "^6.18.0",
     "babel-runtime": "^6.18.0",
     "classnames": "^2.2.5",
     "express": "^4.14.0",
