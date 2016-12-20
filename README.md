@@ -34,6 +34,22 @@ npm install --save corilla-components
   npm run demo
   ```
 
+* Run components tests
+
+  ```bash
+  // run once
+  npm t
+
+  // run in watch mode
+  npm run watch-tests
+
+  // run test coverage
+  npm run cover-test
+
+  // run coverage in watch mode
+  npm run watch-cover
+  ```
+
 ## Versioning
 
 - `npm run release-patch`: minor bug fixes, extra documentation, etc. Does not add any new functionality.

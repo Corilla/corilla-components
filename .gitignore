@@ -5,6 +5,8 @@ Thumbs.db
 .ipr
 .iws
 lib
+.nyc_output/
+coverage/
 node_modules
 npm-debug.log
 *.log
