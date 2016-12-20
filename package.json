@@ -9,7 +9,9 @@
   ],
   "scripts": {
     "clean": "rimraf lib",
-    "lint": "eslint src && eslint docs && eslint examples && sass-lint --verbose",
+    "lint": "npm run lint-scripts && npm run lint-styles",
+    "lint-scripts": "eslint src/** examples/** --ext .js",
+    "lint-styles": "sass-lint --config .sass-lint.yml --verbose --no-exit",
     "build": "npm run clean && babel --quiet src/components --out-dir lib && cpy \"**/*.scss\" ../../lib/ --parents --cwd=src/components && node scripts/compile.js",
     "demo": "npm run build && node server.js examples/webpack.config.js",
     "release-patch": "npm run build && npm version patch",
@@ -93,6 +95,7 @@
     "react-addons-test-utils": "^15.4.1",
     "release-it": "^2.5.1",
     "rimraf": "^2.5.4",
+    "sass-lint": "^1.10.2",
     "sass-loader": "^4.0.2",
     "sinon": "^1.17.6",
     "style-loader": "^0.13.1",

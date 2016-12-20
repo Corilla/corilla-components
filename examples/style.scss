@@ -10,11 +10,10 @@ h5 { font-size: .8em; }
 
 section {
   $baseColor: #e4d234;
-
-  padding: 25px;
-  box-shadow: 0 0 6px rgba(0,0,0,.6);
-  border-radius: 6px;
   margin-bottom: 25px;
-  background-color: lighten($baseColor, 5%);
+  padding: 25px;
   border: 1px solid darken($baseColor, 10%);
+  border-radius: 6px;
+  background-color: lighten($baseColor, 5%);
+  box-shadow: 0 0 6px rgba(0, 0, 0, .6);
 }
